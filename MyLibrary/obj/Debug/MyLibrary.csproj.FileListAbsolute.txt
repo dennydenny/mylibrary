@@ -38,3 +38,43 @@ c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\bin\Ne
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.dll
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.pdb
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\csc.exe
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\System.Collections.Immutable.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\System.Reflection.Metadata.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\vbc.exe
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\VBCSCompiler.exe
+C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\VBCSCompiler.exe.config
+C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.dll.config
+C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.pdb
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Antlr3.Runtime.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.Web.Infrastructure.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Newtonsoft.Json.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Helpers.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Mvc.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Optimization.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Razor.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Deployment.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Razor.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\WebGrease.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Helpers.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Mvc.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Optimization.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Razor.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Deployment.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Razor.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Antlr3.Runtime.pdb
+C:\Developer\C#\MyLibrary\MyLibrary\bin\Newtonsoft.Json.xml
+C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
+C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.dll
+C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.pdb
