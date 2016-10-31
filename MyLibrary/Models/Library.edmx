@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Library.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Year" Type="datetime" Nullable="false" />
+          <Property Name="Publishing" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CardSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BookId1" Type="int" Nullable="false" />
+          <Property Name="ReaderId1" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReaderSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_BookCard">
+          <End Role="BookSet" Type="Self.BookSet" Multiplicity="1" />
+          <End Role="CardSet" Type="Self.CardSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BookSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CardSet">
+              <PropertyRef Name="BookId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReaderCard">
+          <End Role="ReaderSet" Type="Self.ReaderSet" Multiplicity="1" />
+          <End Role="CardSet" Type="Self.CardSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReaderSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CardSet">
+              <PropertyRef Name="ReaderId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LibraryStoreContainer">
+          <EntitySet Name="BookSet" EntityType="Self.BookSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardSet" EntityType="Self.CardSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReaderSet" EntityType="Self.ReaderSet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BookCard" Association="Self.FK_BookCard">
+            <End Role="BookSet" EntitySet="BookSet" />
+            <End Role="CardSet" EntitySet="CardSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReaderCard" Association="Self.FK_ReaderCard">
+            <End Role="ReaderSet" EntitySet="ReaderSet" />
+            <End Role="CardSet" EntitySet="CardSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Library" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="LibraryContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookSet" EntityType="Library.Book" />
+          <EntitySet Name="ReaderSet" EntityType="Library.Reader" />
+          <EntitySet Name="CardSet" EntityType="Library.Card" />
+          <AssociationSet Name="BookCard" Association="Library.BookCard">
+            <End Role="Book" EntitySet="BookSet" />
+            <End Role="Card" EntitySet="CardSet" />
+          </AssociationSet>
+          <AssociationSet Name="ReaderCard" Association="Library.ReaderCard">
+            <End Role="Reader" EntitySet="ReaderSet" />
+            <End Role="Card" EntitySet="CardSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Author" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Year" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Publishing" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Discription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Genre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Reader">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Card">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="BookId" Relationship="Library.BookCard" FromRole="Card" ToRole="Book" />
+          <Property Name="BookId1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ReaderId" Relationship="Library.ReaderCard" FromRole="Card" ToRole="Reader" />
+          <Property Name="ReaderId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="BookCard">
+          <End Type="Library.Book" Role="Book" Multiplicity="1" />
+          <End Type="Library.Card" Role="Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Book">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="BookId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ReaderCard">
+          <End Type="Library.Reader" Role="Reader" Multiplicity="1" />
+          <End Type="Library.Card" Role="Card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reader">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Card">
+              <PropertyRef Name="ReaderId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LibraryStoreContainer" CdmEntityContainer="LibraryContainer">
+    <EntitySetMapping Name="BookSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Library.Book)">
+        <MappingFragment StoreEntitySet="BookSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Publishing" ColumnName="Publishing" />
+          <ScalarProperty Name="Discription" ColumnName="Discription" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReaderSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Library.Reader)">
+        <MappingFragment StoreEntitySet="ReaderSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CardSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Library.Card)">
+        <MappingFragment StoreEntitySet="CardSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BookId1" ColumnName="BookId1" />
+          <ScalarProperty Name="ReaderId1" ColumnName="ReaderId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

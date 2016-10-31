@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Library.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LibraryStoreContainer">
+    <EntitySet Name="BookSet" EntityType="Library.Store.BookSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReaderSet" EntityType="Library.Store.ReaderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CardSet" EntityType="Library.Store.CardSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="BookCard" Association="Library.Store.BookCard">
+      <End Role="Book" EntitySet="BookSet" />
+      <End Role="Card" EntitySet="CardSet" />
+    </AssociationSet>
+    <AssociationSet Name="ReaderCard" Association="Library.Store.ReaderCard">
+      <End Role="Reader" EntitySet="ReaderSet" />
+      <End Role="Card" EntitySet="CardSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BookSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Year" Type="datetime" Nullable="false" />
+    <Property Name="Publishing" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReaderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CardSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId1" Type="int" Nullable="false" />
+    <Property Name="ReaderId1" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="BookCard">
+    <End Role="Book" Type="Library.Store.BookSet" Multiplicity="1" />
+    <End Role="Card" Type="Library.Store.CardSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="BookId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReaderCard">
+    <End Role="Reader" Type="Library.Store.ReaderSet" Multiplicity="1" />
+    <End Role="Card" Type="Library.Store.CardSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reader">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="ReaderId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

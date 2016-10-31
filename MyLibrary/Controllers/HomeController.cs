@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyLibrary.Models;
 
 namespace MyLibrary.Controllers
 {
@@ -24,6 +25,17 @@ namespace MyLibrary.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult AddNewBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewBook(Book book)
+        {
             return View();
         }
     }

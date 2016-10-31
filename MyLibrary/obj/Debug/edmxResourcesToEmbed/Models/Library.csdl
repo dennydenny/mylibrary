@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Library" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="LibraryContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookSet" EntityType="Library.Book" />
+    <EntitySet Name="ReaderSet" EntityType="Library.Reader" />
+    <EntitySet Name="CardSet" EntityType="Library.Card" />
+    <AssociationSet Name="BookCard" Association="Library.BookCard">
+      <End Role="Book" EntitySet="BookSet" />
+      <End Role="Card" EntitySet="CardSet" />
+    </AssociationSet>
+    <AssociationSet Name="ReaderCard" Association="Library.ReaderCard">
+      <End Role="Reader" EntitySet="ReaderSet" />
+      <End Role="Card" EntitySet="CardSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Author" Type="String" Nullable="false" />
+    <Property Name="Year" Type="DateTime" Nullable="false" />
+    <Property Name="Publishing" Type="String" Nullable="false" />
+    <Property Name="Discription" Type="String" Nullable="false" />
+    <Property Name="Genre" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reader">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="Surname" Type="String" Nullable="false" />
+  </EntityType>
+  <EnumType Name="Genres" />
+  <EntityType Name="Card">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="BookId" Relationship="Library.BookCard" FromRole="Card" ToRole="Book" />
+    <Property Name="BookId1" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ReaderId" Relationship="Library.ReaderCard" FromRole="Card" ToRole="Reader" />
+    <Property Name="ReaderId1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="BookCard">
+    <End Type="Library.Book" Role="Book" Multiplicity="1" />
+    <End Type="Library.Card" Role="Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="BookId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReaderCard">
+    <End Type="Library.Reader" Role="Reader" Multiplicity="1" />
+    <End Type="Library.Card" Role="Card" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reader">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Card">
+        <PropertyRef Name="ReaderId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

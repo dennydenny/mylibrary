@@ -38,6 +38,7 @@ c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\bin\Ne
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.dll
 c:\users\lobzik\documents\visual studio 2015\Projects\MyLibrary\MyLibrary\obj\Debug\MyLibrary.pdb
+C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
 C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\csc.exe
 C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -54,6 +55,8 @@ C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.dll.config
 C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\MyLibrary.pdb
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Antlr3.Runtime.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\EntityFramework.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\EntityFramework.SqlServer.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.Web.Infrastructure.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Newtonsoft.Json.dll
@@ -65,6 +68,8 @@ C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Deployment.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Razor.dll
 C:\Developer\C#\MyLibrary\MyLibrary\bin\WebGrease.dll
+C:\Developer\C#\MyLibrary\MyLibrary\bin\EntityFramework.xml
+C:\Developer\C#\MyLibrary\MyLibrary\bin\EntityFramework.SqlServer.xml
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Helpers.xml
 C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.Mvc.xml
@@ -75,6 +80,5 @@ C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Deployment.xml
 C:\Developer\C#\MyLibrary\MyLibrary\bin\System.Web.WebPages.Razor.xml
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Antlr3.Runtime.pdb
 C:\Developer\C#\MyLibrary\MyLibrary\bin\Newtonsoft.Json.xml
-C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csprojResolveAssemblyReference.cache
 C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.dll
 C:\Developer\C#\MyLibrary\MyLibrary\obj\Debug\MyLibrary.pdb
