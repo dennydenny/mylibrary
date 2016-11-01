@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/31/2016 21:44:04
+-- Date Created: 11/01/2016 21:17:43
 -- Generated from EDMX file: C:\Developer\C#\MyLibrary\MyLibrary\Models\Library.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,26 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_BookCard]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CardSet] DROP CONSTRAINT [FK_BookCard];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ReaderCard]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CardSet] DROP CONSTRAINT [FK_ReaderCard];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[BookSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BookSet];
+GO
+IF OBJECT_ID(N'[dbo].[ReaderSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ReaderSet];
+GO
+IF OBJECT_ID(N'[dbo].[CardSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CardSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -51,7 +66,8 @@ GO
 CREATE TABLE [dbo].[CardSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [BookId1] int  NOT NULL,
-    [ReaderId1] int  NOT NULL
+    [ReaderId1] int  NOT NULL,
+    [Direction] int  NOT NULL
 );
 GO
 

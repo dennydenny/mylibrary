@@ -29,6 +29,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="BookId1" ColumnName="BookId1" />
           <ScalarProperty Name="ReaderId1" ColumnName="ReaderId1" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

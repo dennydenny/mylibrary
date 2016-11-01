@@ -17,7 +17,7 @@ namespace MyLibrary.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Author { get; set; }
-        public System.DateTime Year { get; set; }
+        public int Year { get; set; }
         public string Publishing { get; set; }
         public string Discription { get; set; }
         public string Genre { get; set; }

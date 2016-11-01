@@ -1,0 +1,44 @@
+﻿@model MyLibrary.Models.Book
+@{
+    ViewBag.Title = "Show Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row top-buffer">
+</div>
+
+<div class="row">
+        <div class="media">
+            <div class="media-left">
+                    <img class="pull-left img-rounded media-object" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
+              </div>
+              <div class="media-body" style="padding-left: 20px;">
+                <h2 class="media-heading">@Model.Name</h2>
+                  <!--
+                    <p><span class="label label-default">Автор</span></p>
+                 <p> <span class="label label-default">Жанр</span>Драма </p>
+                  -->
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td><span class="label label-default">Автор</span></td>
+                        <td>@Model.Author</td>
+                      </tr>
+                      <tr>
+                        <td><span class="label label-default">Жанр</span></td>
+                        <td>@Model.Genre</td>
+                      </tr>
+                      <tr>
+                        <td><span class="label label-default">Год</span></td>
+                        <td>@Model.Year</td>
+                      </tr>
+                        <tr>
+                        <td><span class="label label-default">Издание</span></td>
+                        <td>@Model.Publishing</td>
+                      </tr>
+                    </tbody>
+              </table>
+                  @Model.Discription
+              </div>
+        </div>
+</div>
+

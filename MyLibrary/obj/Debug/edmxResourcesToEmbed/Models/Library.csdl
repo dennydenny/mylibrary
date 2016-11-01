@@ -18,22 +18,21 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Author" Type="String" Nullable="false" />
-    <Property Name="Year" Type="DateTime" Nullable="false" />
-    <Property Name="Publishing" Type="String" Nullable="false" />
-    <Property Name="Discription" Type="String" Nullable="false" />
-    <Property Name="Genre" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Author" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Publishing" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Discription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Genre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="Reader">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Surname" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
-  <EnumType Name="Genres" />
   <EntityType Name="Card">
     <Key>
       <PropertyRef Name="Id" />
@@ -43,6 +42,7 @@
     <Property Name="BookId1" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ReaderId" Relationship="Library.ReaderCard" FromRole="Card" ToRole="Reader" />
     <Property Name="ReaderId1" Type="Int32" Nullable="false" />
+    <Property Name="Direction" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="BookCard">
     <End Type="Library.Book" Role="Book" Multiplicity="1" />

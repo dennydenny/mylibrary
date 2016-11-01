@@ -36,6 +36,11 @@ namespace MyLibrary.Controllers
         [HttpPost]
         public ActionResult AddNewBook(Book book)
         {
+            return View("ShowBook", book);
+        }
+
+        public ActionResult ShowBook(Book book)
+        {
             return View();
         }
     }
