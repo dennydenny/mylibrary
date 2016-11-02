@@ -33,10 +33,35 @@ namespace MyLibrary.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Метод добавления книги в БД.
+        /// </summary>
+        /// <param name="book">Модель книги, полученная из формы ввода.</param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult AddNewBook(Book book)
+        public JsonResult AddNewBook(Book book)
         {
-            return View("ShowBook", book);
+            bool status = false;
+            string message = "";
+            // TODO: Реализовать проверку входных данных.
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    DatabaseHelper.AddBook(book);
+                    status = true;
+                    message = "Ok";
+                }
+                catch (Exception e)
+                {
+                    message = String.Format("Error: {0}", e.Message);
+                }
+            }
+            else
+            {
+                message = "Error: model is not valid";
+            }
+            return new JsonResult { Data = new { status = status, message = message } };
         }
 
         public ActionResult ShowBook(Book book)

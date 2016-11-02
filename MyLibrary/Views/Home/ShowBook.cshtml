@@ -9,14 +9,18 @@
 <div class="row">
         <div class="media">
             <div class="media-left">
+                <div class="pull-left media-object">
+                    <img class="img-rounded" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
+                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Выдать/забрать</button></p>
+                </div>
+                <!--
                     <img class="pull-left img-rounded media-object" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
+                    <p><button type="button" class="pull-left media-object btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button></p>-->
               </div>
               <div class="media-body" style="padding-left: 20px;">
                 <h2 class="media-heading">@Model.Name</h2>
-                  <!--
-                    <p><span class="label label-default">Автор</span></p>
-                 <p> <span class="label label-default">Жанр</span>Драма </p>
-                  -->
                   <table class="table">
                     <tbody>
                       <tr>
@@ -40,5 +44,23 @@
                   @Model.Discription
               </div>
         </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Список читателей книги</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
 </div>
 

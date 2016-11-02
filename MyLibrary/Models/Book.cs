@@ -19,7 +19,7 @@ namespace MyLibrary.Models
         public string Author { get; set; }
         public int Year { get; set; }
         public string Publishing { get; set; }
-        public string Discription { get; set; }
         public string Genre { get; set; }
+        public string Discription { get; set; }
     }
 }

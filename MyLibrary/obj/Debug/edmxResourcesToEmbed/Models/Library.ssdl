@@ -20,7 +20,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Year" Type="datetime" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="Publishing" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
