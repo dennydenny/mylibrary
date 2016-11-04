@@ -24,6 +24,7 @@
     <Property Name="Publishing" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Discription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Genre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Reader">
     <Key>

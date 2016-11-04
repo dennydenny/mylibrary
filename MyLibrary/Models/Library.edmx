@@ -29,6 +29,7 @@
     <Property Name="Publishing" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ReaderSet">
     <Key>
@@ -99,6 +100,7 @@
           <Property Name="Publishing" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Discription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Genre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Reader">
           <Key>
@@ -159,6 +161,7 @@
           <ScalarProperty Name="Publishing" ColumnName="Publishing" />
           <ScalarProperty Name="Discription" ColumnName="Discription" />
           <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

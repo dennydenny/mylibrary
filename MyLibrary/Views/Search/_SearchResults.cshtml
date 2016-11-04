@@ -1,0 +1,48 @@
+﻿@using MyLibrary.Models
+@model BookSearchResponse
+<div class="row">
+    <h4>Результаты поиска:</h4>
+</div>
+<div class="row">
+@if (Model.Result == null)
+{
+    <span>Ничего не найдено</span>
+    if (Model.Exception != null)
+    {
+        <span>@Model.Exception.Message</span>
+    }
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Год</th>
+                <th>Издание</th>
+                <th>Жанр</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (Book book in Model.Result)
+    {
+            <tr>
+                <td>@book.Name</td>
+                <td>@book.Author</td>
+                <td>@book.Year</td>
+                <td>@book.Publishing</td>
+                <td>@book.Genre</td>
+                <td>@using(Html.BeginForm("ShowBook", "Home", FormMethod.Post))
+                    {
+                    @Html.Hidden("Id", book.Id)
+                    <button type="submit" class="btn btn-default">Открыть</button>
+                    }
+                </td>
+            </tr> 
+    }
+        </tbody>
+     </table>
+}
+</div>

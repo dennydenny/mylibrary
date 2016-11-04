@@ -24,6 +24,7 @@
     <Property Name="Publishing" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Discription" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Genre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ReaderSet">
     <Key>

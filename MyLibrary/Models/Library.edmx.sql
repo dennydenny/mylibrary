@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/02/2016 22:36:23
+-- Date Created: 11/05/2016 00:08:14
 -- Generated from EDMX file: C:\Developer\C#\MyLibrary\MyLibrary\Models\Library.edmx
 -- --------------------------------------------------
 
@@ -50,7 +50,8 @@ CREATE TABLE [dbo].[BookSet] (
     [Year] int  NOT NULL,
     [Publishing] nvarchar(max)  NOT NULL,
     [Discription] nvarchar(max)  NOT NULL,
-    [Genre] nvarchar(max)  NOT NULL
+    [Genre] nvarchar(max)  NOT NULL,
+    [Count] int  NOT NULL
 );
 GO
 

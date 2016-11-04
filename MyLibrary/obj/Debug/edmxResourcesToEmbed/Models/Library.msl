@@ -11,6 +11,7 @@
           <ScalarProperty Name="Publishing" ColumnName="Publishing" />
           <ScalarProperty Name="Discription" ColumnName="Discription" />
           <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

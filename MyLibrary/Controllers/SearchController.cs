@@ -1,18 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using MyLibrary.Models;
 
 namespace MyLibrary.Controllers
 {
     public class SearchController : Controller
     {
-        // GET: Search
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
+        [HttpPost]
+        public ActionResult Index(string searchQuery)
+        {
+            BookSearchResponse response = new BookSearchResponse();
+            response.Query = searchQuery;
+            try
+            {
+                response.Result = DatabaseHelper.GetBookBySubstring(searchQuery);
+            }
+            catch (Exception e)
+            {
+                response.Exception = e;
+            }
+            return PartialView("_SearchResults", response);
+        }
     }
 }
