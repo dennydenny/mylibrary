@@ -161,6 +161,25 @@ namespace MyLibrary.Controllers
             }
         }
 
+        /// <summary>
+        /// Метод, осуществляющий запись нового читателя в БД.
+        /// </summary>
+        /// <param name="reader">Экземпляр читателя.</param>
+        public static void AddReader(Reader reader)
+        {
+            if (reader != null)
+            {
+                using (LibraryContainer context = new LibraryContainer())
+                {
+                    context.ReaderSet.Add(reader);
+                    context.SaveChanges();
+                }
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
+        }
         public static void RemoveBook(Book book)
         {
             if (book != null)

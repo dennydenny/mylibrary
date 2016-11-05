@@ -18,6 +18,8 @@ namespace MyLibrary.Models
         public int BookId1 { get; set; }
         public int ReaderId1 { get; set; }
         public int Direction { get; set; }
+        public System.DateTime Timestamp { get; set; }
+        public int Count { get; set; }
     
         public virtual Book BookId { get; set; }
         public virtual Reader ReaderId { get; set; }

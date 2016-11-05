@@ -11,7 +11,7 @@ namespace MyLibrary.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
+    
     public partial class Book
     {
         public int Id { get; set; }
@@ -22,8 +22,5 @@ namespace MyLibrary.Models
         public string Discription { get; set; }
         public string Genre { get; set; }
         public int Count { get; set; }
-        [NotMapped]
-        public int AvailableCount { get; private set; }
-
     }
 }

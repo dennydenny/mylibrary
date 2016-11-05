@@ -166,6 +166,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Custom.css" />
     <Content Include="Content\img\book_sample.jpg" />
+    <Content Include="Content\img\gears.gif" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -222,6 +223,7 @@
     <Content Include="Views\Home\ShowBook.cshtml" />
     <Content Include="Views\Search\Result.cshtml" />
     <Content Include="Views\Search\_SearchResults.cshtml" />
+    <Content Include="Views\Home\AddNewReader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

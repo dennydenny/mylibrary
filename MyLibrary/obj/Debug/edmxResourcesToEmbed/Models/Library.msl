@@ -31,6 +31,8 @@
           <ScalarProperty Name="BookId1" ColumnName="BookId1" />
           <ScalarProperty Name="ReaderId1" ColumnName="ReaderId1" />
           <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

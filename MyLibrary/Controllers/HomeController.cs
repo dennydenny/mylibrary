@@ -116,5 +116,41 @@ namespace MyLibrary.Controllers
             return View("Index");
         }
 
+        /// <summary>
+        /// Метод, осуществляющий добавление нового читателя в библиотеку.
+        /// </summary>
+        /// <param name="reader">Экземпляр читателя.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult AddNewReader(Reader reader)
+        {
+            bool status = false;
+            string message = "";
+            // TODO: Реализовать проверку входных данных.
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    DatabaseHelper.AddReader(reader);
+                    status = true;
+                    message = "Ok";
+                }
+                catch (Exception e)
+                {
+                    message = String.Format("Error: {0}", e.Message);
+                }
+            }
+            else
+            {
+                message = "Error: model is not valid";
+            }
+            return new JsonResult { Data = new { status = status, message = message } };
+        }
+
+        public ActionResult AddNewReader()
+        {
+            return View();
+        }
+
     }
 }

@@ -7,7 +7,7 @@
       <Diagram DiagramId="6c342f2ff27c4f36ba06a09c71ed138f" Name="Diagram1" >
         <EntityTypeShape EntityType="Library.Book" Width="1.5" PointX="0.625" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Library.Reader" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Library.Card" Width="1.5" PointX="3.125" PointY="0.875" />
+        <EntityTypeShape EntityType="Library.Card" Width="1.5" PointX="3.125" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="Library.BookCard" />
         <AssociationConnector Association="Library.ReaderCard" />
       </Diagram>

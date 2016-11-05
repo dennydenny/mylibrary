@@ -47,6 +47,8 @@
     <Property Name="BookId1" Type="int" Nullable="false" />
     <Property Name="ReaderId1" Type="int" Nullable="false" />
     <Property Name="Direction" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="BookCard">
     <End Role="Book" Type="Library.Store.BookSet" Multiplicity="1" />
@@ -120,6 +122,8 @@
           <NavigationProperty Name="ReaderId" Relationship="Library.ReaderCard" FromRole="Card" ToRole="Reader" />
           <Property Name="ReaderId1" Type="Int32" Nullable="false" />
           <Property Name="Direction" Type="Int32" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="BookCard">
           <End Type="Library.Book" Role="Book" Multiplicity="1" />
@@ -181,6 +185,8 @@
           <ScalarProperty Name="BookId1" ColumnName="BookId1" />
           <ScalarProperty Name="ReaderId1" ColumnName="ReaderId1" />
           <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

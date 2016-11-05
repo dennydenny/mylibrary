@@ -44,6 +44,8 @@
     <NavigationProperty Name="ReaderId" Relationship="Library.ReaderCard" FromRole="Card" ToRole="Reader" />
     <Property Name="ReaderId1" Type="Int32" Nullable="false" />
     <Property Name="Direction" Type="Int32" Nullable="false" />
+    <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="BookCard">
     <End Type="Library.Book" Role="Book" Multiplicity="1" />

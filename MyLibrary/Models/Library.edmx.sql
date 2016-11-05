@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/05/2016 00:08:14
+-- Date Created: 11/05/2016 16:45:08
 -- Generated from EDMX file: C:\Developer\C#\MyLibrary\MyLibrary\Models\Library.edmx
 -- --------------------------------------------------
 
@@ -68,7 +68,9 @@ CREATE TABLE [dbo].[CardSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [BookId1] int  NOT NULL,
     [ReaderId1] int  NOT NULL,
-    [Direction] int  NOT NULL
+    [Direction] int  NOT NULL,
+    [Timestamp] datetime  NOT NULL,
+    [Count] int  NOT NULL
 );
 GO
 

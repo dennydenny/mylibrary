@@ -42,6 +42,8 @@
     <Property Name="BookId1" Type="int" Nullable="false" />
     <Property Name="ReaderId1" Type="int" Nullable="false" />
     <Property Name="Direction" Type="int" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="BookCard">
     <End Role="Book" Type="Library.Store.BookSet" Multiplicity="1" />
