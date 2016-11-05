@@ -35,9 +35,14 @@
             </div>
         </form>
 </div>
+<div class="row">
+    <div id="loading" class="col-md-5 col-md-offset-4" style="display: none;">
+        <img src="/Content/img/gears.gif">
+    </div>
+</div>
 <script>
     $("#newBookForm").submit(function (e) {
-
+        $("#loading").show();
         var url = "/Home/AddNewBook";
 
         $.ajax({
@@ -46,10 +51,12 @@
             dataType: "json",
             data: $("#newBookForm").serialize(),
             success: function (data) {
+                $("#loading").hide();
                 alert(data.message);
             },
             error: function (request, status, error) {
-            alert(request.responseText);
+                $("#loading").hide();
+                alert(request.responseText);
         }
         });
 

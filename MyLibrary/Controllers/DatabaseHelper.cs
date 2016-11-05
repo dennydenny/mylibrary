@@ -180,13 +180,32 @@ namespace MyLibrary.Controllers
                 throw new ArgumentNullException();
             }
         }
-        public static void RemoveBook(Book book)
+
+        /// <summary>
+        /// Метод, возвращающий коллекцию всех читателей библиотеки.
+        /// </summary>
+        /// <returns>Все читатели библиотеки.</returns>
+        public static IEnumerable<Reader> GetAllReaders()
         {
-            if (book != null)
+            List<Reader> list;
+            using (LibraryContainer context = new LibraryContainer())
+            {
+                list = context.ReaderSet.ToList<Reader>();
+            }
+                return list;
+        }
+
+        /// <summary>
+        /// Метод, осуществляющий запись карточки в БД.
+        /// </summary>
+        /// <param name="card">Экземпляр карточки.</param>
+        public static void AddCard(Card card)
+        {
+            if (card != null)
             {
                 using (LibraryContainer context = new LibraryContainer())
                 {
-                    context.BookSet.Remove(book);
+                    context.CardSet.Add(card);
                     context.SaveChanges();
                 }
             }
@@ -194,6 +213,8 @@ namespace MyLibrary.Controllers
             {
                 throw new ArgumentNullException();
             }
+
         }
+
     }
 }

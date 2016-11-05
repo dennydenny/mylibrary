@@ -1,4 +1,5 @@
-﻿@model MyLibrary.Models.Book
+﻿@using MyLibrary.Models
+@model MyLibrary.Models.Book
 @{
     ViewBag.Title = "Show Book";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,13 +12,8 @@
             <div class="media-left">
                 <div class="pull-left media-object">
                     <img class="img-rounded" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
-                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Выдать/забрать</button></p>
+                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Выдать книгу</button></p>
                 </div>
-                <!--
-                    <img class="pull-left img-rounded media-object" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
-                    <p><button type="button" class="pull-left media-object btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button></p>-->
               </div>
               <div class="media-body" style="padding-left: 20px;">
                 <h2 class="media-heading">@Model.Name</h2>
@@ -54,18 +50,37 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
+    <form class="form-horizontal" id="newCardForm" method="post" action="/Home/AddNewCard">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Выдать книгу читателю</h4>
       </div>
       <div class="modal-body">
-        ...
+        <div class="form-group">
+              <label for="readerSelect">Кому</label>
+              <select class="form-control" id="readerSelect" name="ReaderId" required>
+                  <option disabled selected>Выберите читателя</option>
+                  @foreach (Reader reader in ViewBag.Readers)
+                  {
+                    <option value="@reader.Id">@reader.Name @reader.Surname</option>
+                  }
+                </select>
+              </div>
+                <div class="form-group">
+                    <label for="Count">Сколько</label>
+                    <input type="text" class="form-control" id="Count" name="Count">
+                    <input type="hidden" name="BookId" value="@Model.Id">
+                </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Сохранить</button>
+        <button type="submit" id="submitBtn" class="btn btn-primary">Добавить</button>
       </div>
+    </form>
     </div>
   </div>
-</div>
-
+<script>
+    $('#submitBtn').click(function () {
+        $('#myModal').hide();
+    });
+</script>

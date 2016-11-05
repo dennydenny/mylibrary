@@ -97,6 +97,7 @@ namespace MyLibrary.Controllers
                 try
                 {
                     Book book = DatabaseHelper.GetBookById(id);
+                    ViewBag.Readers = DatabaseHelper.GetAllReaders();
                     return View(book);
                 }
                 catch (Exception e)
@@ -149,6 +150,15 @@ namespace MyLibrary.Controllers
 
         public ActionResult AddNewReader()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddNewCard(int readerid, int count, int bookid)
+        {
+            //TODO: Реализовать валидацию данных на клиенте и сервере.
+            Card card = new Card {ReaderId1 = readerid, Count = count, BookId1 = bookid, Timestamp = DateTime.Now, Direction = 2};
+            DatabaseHelper.AddCard(card);
             return View();
         }
 
