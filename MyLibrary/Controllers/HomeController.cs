@@ -11,6 +11,7 @@ namespace MyLibrary.Controllers
     {
         public ActionResult Index()
         {
+            DatabaseHelper.FillByTestData();
             return View();
         }
 
