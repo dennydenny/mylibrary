@@ -227,6 +227,7 @@
     <Content Include="Views\Home\AddNewReader.cshtml" />
     <Content Include="Views\Report\InProgress.cshtml" />
     <Content Include="Views\Home\_ReturnBookPartial.cshtml" />
+    <Content Include="Views\Home\_TakeBookPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
