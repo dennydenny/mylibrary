@@ -40,12 +40,14 @@
             data: $("#newReaderForm").serialize(),
             success: function (data) {
                 $("#loading").hide();
+                $("#newReaderForm")[0].reset();
                 // Добавить индикацию ответа - ок/не ок.
                 var x = JSON.parse(data);
                 alert(x);
             },
             error: function (request, status, error) {
                 $("#loading").hide();
+                $("#newReaderForm")[0].reset();
                 alert(request.responseText);
         }
         });

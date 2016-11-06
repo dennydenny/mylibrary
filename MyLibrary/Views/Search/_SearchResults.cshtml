@@ -38,7 +38,7 @@ else
                 <td>@book.Publishing</td>
                 <td>@book.Genre</td>
                 <td>@book.Count</td>
-                <td>@book.Count</td>
+                <td>@book.AvailableCount</td>
                 <td>@using(Html.BeginForm("ShowBook", "Home", FormMethod.Post))
                     {
                     @Html.Hidden("Id", book.Id)

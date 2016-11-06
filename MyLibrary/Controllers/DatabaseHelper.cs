@@ -216,5 +216,41 @@ namespace MyLibrary.Controllers
 
         }
 
+        /// <summary>
+        /// Метод, возвращающий количество занятых экземпляров конкретной книги.
+        /// </summary>
+        /// <param name="id">Идентификатор книги</param>
+        /// <returns></returns>
+        public static int GetBusyBookCount(int id)
+        {
+            if (id > 0)
+            {
+                int inside, outside;
+                using (LibraryContainer context = new LibraryContainer())
+                {
+                    try
+                    {
+                        inside = context.CardSet.Where(x => x.BookId1 == id && x.Direction == 1).Sum(x => x.Count);
+                    }
+                    catch
+                    {
+                        inside = 0;
+                    }
+                    try
+                    {
+                        outside = context.CardSet.Where(x => x.BookId1 == id && x.Direction == 2).Sum(x => x.Count);
+                    }
+                    catch
+                    {
+                        outside = 0;
+                    }
+                }
+                return inside - outside;
+            }
+            else
+            {
+                throw new ArgumentNullException();
+            }
+        }
     }
 }

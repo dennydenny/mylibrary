@@ -141,6 +141,7 @@
     <Compile Include="Models\Card.cs">
       <DependentUpon>Library.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookAvailableCount.cs" />
     <Compile Include="Models\Library.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

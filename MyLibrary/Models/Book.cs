@@ -9,9 +9,7 @@
 
 namespace MyLibrary.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
     public partial class Book
     {
         public int Id { get; set; }
