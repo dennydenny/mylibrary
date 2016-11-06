@@ -12,7 +12,8 @@
             <div class="media-left">
                 <div class="pull-left media-object">
                     <img class="img-rounded" src="/Content/img/book_sample.jpg" height="200" width="330" alt="Заглушка книги">
-                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Выдать книгу</button></p>
+                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#takeBookModal"><span class="glyphicon glyphicon-user"></span> Выдать книгу</button></p>
+                    <p><button type="button" class="btn btn-default" data-toggle="modal" data-target="#returnBookModal"><span class="glyphicon glyphicon-user"></span> Вернуть книгу</button></p>
                 </div>
               </div>
               <div class="media-body" style="padding-left: 20px;">
@@ -48,7 +49,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="takeBookModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <form class="form-horizontal" id="newCardForm" method="post" action="/Home/AddNewCard">
     <div class="modal-content">
@@ -59,7 +60,7 @@
       <div class="modal-body">
         <div class="form-group">
               <label for="readerSelect">Кому</label>
-              <select class="form-control" id="readerSelect" name="ReaderId" required>
+              <select class="form-control" id="readerSelect1" name="ReaderId" required>
                   <option disabled selected>Выберите читателя</option>
                   @foreach (Reader reader in ViewBag.Readers)
                   {
@@ -73,12 +74,20 @@
                     <input type="hidden" name="BookId" value="@Model.Id">
                 </div>
       </div>
+        
       <div class="modal-footer">
-        <button type="submit" id="submitBtn" class="btn btn-primary">Добавить</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
       </div>
+        </div>
     </form>
     </div>
-  </div>
+</div>
+
+<div class="modal fade" id="returnBookModal" tabindex="-1" role="dialog" aria-labelledby="returnBookLabel">
+  <div class="modal-dialog" role="document">
+    @Html.Partial("_ReturnBookPartial");
+    </div>
+</div>
 <script>
     $('#submitBtn').click(function () {
         $('#myModal').hide();

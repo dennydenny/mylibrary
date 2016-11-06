@@ -24,6 +24,7 @@ else
                 <th>Издание</th>
                 <th>Жанр</th>
                 <th>Количество</th>
+                <th>Кол-во доступных</th>
                 <th></th>
             </tr>
         </thead>
@@ -36,6 +37,7 @@ else
                 <td>@book.Year</td>
                 <td>@book.Publishing</td>
                 <td>@book.Genre</td>
+                <td>@book.Count</td>
                 <td>@book.Count</td>
                 <td>@using(Html.BeginForm("ShowBook", "Home", FormMethod.Post))
                     {

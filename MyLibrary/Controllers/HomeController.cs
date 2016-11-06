@@ -154,10 +154,10 @@ namespace MyLibrary.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddNewCard(int readerid, int count, int bookid)
+        public ActionResult AddNewCard(int readerid, int count, int bookid, int direction)
         {
             //TODO: Реализовать валидацию данных на клиенте и сервере.
-            Card card = new Card {ReaderId1 = readerid, Count = count, BookId1 = bookid, Timestamp = DateTime.Now, Direction = 2};
+            Card card = new Card {ReaderId1 = readerid, Count = count, BookId1 = bookid, Timestamp = DateTime.Now, Direction = direction};
             DatabaseHelper.AddCard(card);
             return View();
         }
