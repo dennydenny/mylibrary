@@ -28,8 +28,20 @@
         <img src="/Content/img/gears.gif">
     </div>
 </div>
+<div class="row">
+    <div class="alert alert-success" id="succesAlert" style="display: none;">
+        <strong>Готово!</strong> Читатель успешно создан.
+    </div>
+</div>
+<div class="row">
+    <div class="alert alert-warning" id="warningAlert" style="display: none;">
+        <strong>Упс!</strong> Что-то пошло не так.
+    </div>
+</div>
 <script>
     $("#newReaderForm").submit(function (e) {
+        $("#succesAlert").hide();
+        $("#warningAlert").hide();
         $("#loading").show();
         var url = "/Home/AddNewReader";
 
@@ -41,13 +53,20 @@
             success: function (data) {
                 $("#loading").hide();
                 $("#newReaderForm")[0].reset();
-                // Добавить индикацию ответа - ок/не ок.
-                var x = JSON.parse(data);
-                alert(x);
+                var result = JSON.parse(JSON.stringify(data));
+                if (result.message == "Ok")
+                {
+                    $("#succesAlert").show();
+                }
+                else
+                {
+                    $("#warningAlert").show();
+                }
             },
             error: function (request, status, error) {
                 $("#loading").hide();
                 $("#newReaderForm")[0].reset();
+                $("#warningAlert").show();
                 alert(request.responseText);
         }
         });

@@ -14,7 +14,15 @@ namespace MyLibrary.Models
         {
             get
             {
-                int busy = DatabaseHelper.GetBusyBookCount(this.Id);
+                int busy;
+                try
+                {
+                    busy = DatabaseHelper.GetBusyBookCount(this.Id);
+                }
+                catch
+                {
+                    busy = 0;
+                }
                 return this.Count - busy;
             }
         }

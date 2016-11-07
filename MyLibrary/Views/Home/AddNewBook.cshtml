@@ -27,6 +27,9 @@
                     <input type="text" class="form-control" id="Genre" name="Genre" placeholder="Жанр">
                 </div>
                 <div class="form-group">
+                    <input type="text" class="form-control" id="Count" name="Count" placeholder="Количество">
+                </div>
+                <div class="form-group">
                     <input type="text" class="form-control" id="Discription" name="Discription" placeholder="Краткое описание">
                 </div>
                 <div class="form-group">
@@ -40,8 +43,20 @@
         <img src="/Content/img/gears.gif">
     </div>
 </div>
+<div class="row">
+    <div class="alert alert-success" id="succesAlert" style="display: none;">
+        <strong>Готово!</strong> Книга успешно добавлена.
+    </div>
+</div>
+<div class="row">
+    <div class="alert alert-warning" id="warningAlert" style="display: none;">
+        <strong>Упс!</strong> Что-то пошло не так.
+    </div>
+</div>
 <script>
     $("#newBookForm").submit(function (e) {
+        $("#succesAlert").hide();
+        $("#warningAlert").hide();
         $("#loading").show();
         var url = "/Home/AddNewBook";
 
@@ -52,10 +67,19 @@
             data: $("#newBookForm").serialize(),
             success: function (data) {
                 $("#loading").hide();
-                alert(data.message);
+                $("#newBookForm")[0].reset();
+                var result = JSON.parse(JSON.stringify(data));
+                if (result.message == "Ok") {
+                    $("#succesAlert").show();
+                }
+                else {
+                    $("#warningAlert").show();
+                }
             },
             error: function (request, status, error) {
                 $("#loading").hide();
+                $("#newBookForm")[0].reset();
+                $("#warningAlert").show();
                 alert(request.responseText);
         }
         });
