@@ -15,13 +15,6 @@ namespace MyLibrary.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
         public ActionResult AddNewBook()
         {
             return View();
@@ -43,32 +36,6 @@ namespace MyLibrary.Controllers
                 try
                 {
                     DatabaseHelper.AddBook(book);
-                    status = true;
-                    message = "Ok";
-                }
-                catch (Exception e)
-                {
-                    message = String.Format("Error: {0}", e.Message);
-                }
-            }
-            else
-            {
-                message = "Error: model is not valid";
-            }
-            return new JsonResult { Data = new { status = status, message = message } };
-        }
-
-        [HttpPost]
-        public JsonResult DeleteBook(Book book)
-        {
-            bool status = false;
-            string message = "";
-            // TODO: Реализовать проверку входных данных.
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    //DatabaseHelper.AddBook(book);
                     status = true;
                     message = "Ok";
                 }
